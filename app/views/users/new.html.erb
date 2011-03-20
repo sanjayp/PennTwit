@@ -1,5 +1,39 @@
-<h1>New user</h1>
+  <h1>Sign up</h1>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', users_path %>
+<%= form_for(@user) do |f| %>
+ <div class="field">
+    <%= f.label :firstname %><br />
+    <%= f.text_field :firstname %>
+ </div>
+ <div class="field">
+    <%= f.label :lastname %><br />
+    <%= f.text_field :lastname %><br />
+ </div>
+ <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+ </div>
+ <div class="field">
+    <%= f.label :location %><br />
+    <%= f.text_field :location %>
+ </div>
+ <div class="field">
+    <%= f.label :timezone %><br />
+    <%= f.text_field :timezone %>
+ </div>
+ <div class="field">
+    <%= f.label :bio %><br />
+    <%= f.text_field :bio %>
+ </div>
+ <div class="field">
+    <%= f.label :privacy %><br />
+    <%= f.text_field :privacy %>
+ </div>
+ <div class="field">
+    <%= f.label :webpage %><br />
+    <%= f.text_field :webpage %>
+ </div>   
+ <div class="actions">
+    <%= f.submit "Sign up" %>
+ </div>
+<% end %>
