@@ -2,10 +2,17 @@
   <nav class="round">
     <ul>
       <li><%= link_to "Home", root_path %></li>
-      <li><%= link_to "Sign in", '#' %></li>
 	  <li><%= link_to "Show Users", users_path %></li>
 	  <li><%= link_to "Show Messages", messages_path %></li>
 	  <li><%= link_to "Show Tweets", tweets_path %></li>
+      <% if signed_in? %>
+      <li><%= link_to "Profile", get_current_user %></li>
+      <% end %>
+      <% if signed_in? %>
+      <li><%= link_to "Sign out", signout_path, :method => :delete %></li>
+      <% else %>
+      <li><%= link_to "Sign in", signin_path %></li>
+      <% end %>
     </ul>
   </nav>
 </header>
