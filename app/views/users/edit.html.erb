@@ -1,6 +1,48 @@
 <h1>Editing user</h1>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @user %> |
+<%= form_for(@user) do |f| %>
+  <div class="field">
+    <%= f.label :firstname %><br />
+    <%= f.text_field :firstname %>
+  </div>
+  <div class="field">
+    <%= f.label :lastname %><br />
+    <%= f.text_field :lastname %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation, "Confirmation" %><br />
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br />
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
+    <%= f.label :timezone %><br />
+    <%= f.text_field :timezone %>
+  </div>
+  <div class="field">
+    <%= f.label :bio %><br />
+    <%= f.text_field :bio %>
+  </div>
+  <div class="field">
+    <%= f.label :privacy %><br />
+    <%= f.text_field :privacy %>
+  </div>
+  <div class="field">
+    <%= f.label :webpage %><br />
+    <%= f.text_field :webpage %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>
+<% end %>
 <%= link_to 'Back', users_path %>

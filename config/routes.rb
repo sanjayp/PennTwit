@@ -1,9 +1,15 @@
 Penntwit::Application.routes.draw do
 
+  get "sessions/new"
+
   get "users/new"
   match '/signup', :to => 'users#new'
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
+  match '/signin', :to => 'sessions#new'
+  match '/signout', :to => 'sessions#destroy'
+
+  match 'users/:id/profile' => 'users#profile'
 
   root :to => 'pages#home'
 
@@ -18,6 +24,8 @@ Penntwit::Application.routes.draw do
   resources :tweets
 
   resources :users
+
+  resources :sessions, :only => [:new, :create, :destroy]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
